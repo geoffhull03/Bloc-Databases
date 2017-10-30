@@ -1,0 +1,93 @@
+1. Given the values table below, what data types do each of these values represent?
+
+    Answer: A Clockwork Orange => String
+            42 => Integer
+            09/02/1945 => Integer
+            98.7 => Float
+            15.99 => Float
+            payments => String
+
+2. Explain in your own words when a database might be used. Explain when a text file might be used.
+
+    Answer: A database would be used for large sets of information that will need to be analyzed in the future.
+    A database would be a good idea of scalability is a potential issue. If the data does not need to be extensively
+    reviewed after use, a text file would be the smarter, more efficient decision.
+
+3. Describe one difference between SQL and other programming languages.
+
+    Answer: The most obvious difference would be that SQL is a declarative language, where other programming languages
+    are procedural. SQL looks to describe results and return those results from a database given the parameters.
+    Procedural languages describe algorithms and they process steps of information.
+
+4. In your own words, explain how the pieces of a database system fit together at a high level.
+
+    Answer: Databases store all of the memory that an application can/needs to access. Information stored in objects, arrays,
+    and other data types are all stored in a database so they can be accessed by a user (or users) at any point.
+    Databases keep all information stored efficiently so that more complex applications can run faster and more
+    efficient
+
+5. Explain the meaning of table, row, column, and value.
+
+    Table: A block of information in a database that stores and organizes columns, rows, and values
+    Row: An individual line item that stores information. Usually, all cells in a row are related to one
+      instance and is horizontal.
+    Value: Each individual cell contains a value. It's some piece of information that the column name describes
+    Column: A vertical label as to what type of information is stored. All column values are usually the same type of
+    data.
+
+6. List 3 data types that can be used in a table.
+
+    1. A String - Usually text (ex. "How Now Brown Cow")
+    2. Integer - Any sort of number (non-decimal. ex: 14)
+    3. Float - A decimal number (ex: 94.5)
+
+7. Given the payments table below, provide an English description and the results for the following queries:
+
+ SELECT date, amount
+ FROM payments;
+    The result will be the value(s) from the DATES and the AMOUNTS columns from the PAYMENTS table.
+
+ SELECT amount
+ FROM payments
+ WHERE amount > 500;
+    The result will be the amounts greater than 500 from the AMOUNT column in the PAYMENTS table.
+
+ SELECT *
+ FROM payments
+ WHERE payee = "Mega Foods";
+    The result will be all of the rows where the value in the PAYEE column is "Mega Foods" in the PAYMENTS table.
+
+ --------------------------------------
+
+8. Given the users table below, write the following SQL queries and their results:
+
+Select the email and sign-up date for the user named DeAndre Data.
+    SELECT email, signup
+    FROM users
+    WHERE userid = 1;
+
+Select the user ID for the user with email 'aleesia.algorithm@uw.edu'.
+    SELECT userid
+    FROM users
+    WHERE email = 'aleesia.algorithm@uw.edu'
+Select all the columns for the user ID equal to 4.
+    SELECT *
+    FROM users
+    WHERE userid = 4
+
+PAYMENTS
+date	    payee	                amount	                memo
+-----     -----
+5/1/2016	West Hill Apartments	1500.00	                Rent
+5/10/2016	Best Toy Store	      37.00	                  Beanie Babies
+5/15/2016	Mega Foods	          124.93	                Groceries
+5/23/2016	Shoes R Cool	        54.72	                  Athletic shoes
+users
+
+
+USERS
+userid	name	            email	                        signup
+1	      Aleesia Algorithm	aleesia.algorithm@uw.edu	    2014-10-24
+2	      DeAndre Data	    datad@comcast.net	            2008-01-20
+3	      Chris Collection	chris.collection@outlook.com	2012-01-20
+4	      Brandy Boolean	  bboolean@nasa.gov	            1999-10-15
