@@ -72,7 +72,7 @@
       a) Display all the information about all of the available cats.
           Answer: SELECT * FROM cats
       b) Choose one cat of each age to show to potential adopters.
-          Answer: SELECT DISTINCT(age), * from cats
+          Answer: SELECT DISTINCT(age), *  from cats
       c) Find all of the names of the cats, so you don’t choose duplicate names for new cats.
           Answer: SELECT name FROM cats
 

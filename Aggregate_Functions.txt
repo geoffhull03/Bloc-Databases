@@ -1,0 +1,58 @@
+1. List 5 aggregate functions and explain, in your own words, what they are for. Include a real world example for each. If you can’t list these from memory, do these flashcards until you can!
+
+    SUM – Used to add up number values in colums/groups. Example --
+    SELECT SUM (commissions) FROM compensation would add up the commissions column from the compensation table.
+
+    AVG – Used to take the average of a group of values. Example –
+    SELECT AVG (commissions) FROM compensation would take the average of the numbers
+    in the commissions column on the compensation table.
+
+    COUNT – This would return the number of rows in a table.
+    Example SELECT COUNT(employees) from compensation would return the number of employees in the compensation table.
+
+    MIN – This would return the smallest amount in a given query. Example –
+    SELECT MIN (commission) FROM compensation would return the smallest commission amount from the compensation table.
+
+    MAX – This would return the largest amount in a given query. Example –
+    SELECT MAX(commission) FROM compensation would return the largest commission amount from the compensation table.
+
+3. How would you determine the display order of data returned by your SELECT statement?
+
+	 Answer: You could use a grouping clause (Distinct, Group By, Order By, etc.).
+
+4. What is a real world situation where you would use OFFSET?
+   Answer: If a company had 20 employees, but the first 10 had been at the company for over 5 years and you wanted to
+   just view everyone at the company in a database with the exception of the first ten employees, you could use OFFSET.
+
+5. Why is it important to use ORDER BY when limiting your results?
+   Answer: Because the ORDER BY clause gives the intended information in a readable, organized manner. Without the ORDER BY,
+   you could potentially get a limited amount of random data.
+
+6. What is the difference between HAVING and WHERE?
+   Answer: HAVING eliminates entire groups of results with a single comparison and does so after aggregation of the data (with the
+   other clauses). WHERE filters groups before aggregation of the data.
+
+7. Correct the following SELECT statement:
+   SELECT id, SUM (amount)
+   FROM payment
+   HAVING SUM (amount) > 200;
+      Answer:
+        SELECT id, SUM(amount)
+        FROM payment
+        WHERE SUM(amount) > 200;
+
+8. Write queries to retrieve the following information.
+      a) From the cats table, list all cats organized by intake date.
+          SELECT * FROM cats ORDER BY intake date;
+      b) Given an adoptions table with the columns id, date, adopter, cat, and fee,
+      determine the 5 most recent adoptions to be featured as “Happy Tails” on social media.
+          SELECT id FROM cats ORDER BY (desc);
+      c) There is a potential adopter looking for an adult female cat. In the most efficient way possible,
+      from the Cats table, list all female cats 2 or more years old.
+          SELECT id FROM cats WHERE gender = "F" || age > 2;
+      d) From the donations table (described in problem #2), find the top 5 donors with the
+      highest cumulative donation amounts to be honored as “Platinum Donors”.
+          SELECT donors FROM iron-bank-donations ORDER BY amount (desc) LIMIT 5;
+      e) From the donations table (described in problem #2), find donors 6-15 with the next highest
+      cumulative donation amounts to be honored as “Gold Donors”.
+          SELECT donors FROM iron-bank-donations ORDER BY amount OFFSET 5 LIMIT 10;
