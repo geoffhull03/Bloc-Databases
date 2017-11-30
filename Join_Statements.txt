@@ -1,0 +1,77 @@
+1. How do you find data that is held in two separate data tables?
+    Answer: You find that data by using a JOIN statement.
+
+2. Explain, in your own words, the difference between a CROSS JOIN, INNER JOIN,
+LEFT OUTER JOIN, RIGHT OUTER JOIN, and FULL OUTER JOIN. Give a real world example for each.
+    CROSS JOIN: Produces every possible combination of each column from each table being queried.
+    INNER JOIN: Combining tables that produces one row in the results table for each common row in the tables
+    being queried.
+    LO JOIN: Combines two tables where each row from the first table and each matching row from the second table are the results.
+    RO JOIN: Results table contains each matching row between the queried tables as well as each row from the second table.
+    FO JOIN: Combination of LO Join and RO Join -- Does inner join first. Fills in the null values in each table.
+
+3. Define primary key and foreign key. Give a real world example for each.
+    Answer: Primary key is a unique identifier for each row in a table.
+    Foreign key is a primary key of one table that is included as a non-unique attribute in another table.
+    A primary key  in one table can be a foreign key in another table.
+
+4. Define aliasing.
+    Answer: The technique of creating short variable names, usually a single letter, to replace the table name in a query.
+
+5. Change this query so that you are using aliasing:
+  SELECT professor.name, compensation.salary, compensation.vacation_days
+  FROM professor JOIN compensation ON professor.id = compensation.professor_id;
+
+    Answer:
+
+6. Why would you use a NATURAL JOIN? Give a real world example.
+    Answer: A natural join would be perfect when you are combining tables that are associated by a foreign key.
+
+7. Build an Employees table and a Shifts table with appropriate primary and foreign keys.
+Then, write queries to find the following information:
+  a) List all employees and all shifts.
+      Answer: SELECT * FROM employees NATURAL JOIN shifts
+  b) Create a list of all possible schedules.
+      Answer: SELECT * FROM employees NATURAL JOIN shifts
+
+8. Given the Dogs table (described below), the Adoptions table (described below),
+the Adopters table (which has the columns id, first_name, last_name, address, and phone number),
+and the Volunteers table (which has the columns id, name, address,
+phone_number, available_to_foster, and foster_id), please write queries to retrieve the following information.
+  a)Create a list of all volunteers. If the volunteer is fostering a dog, include each dog as well.
+      Answer:
+  b) List the adopter’s name and the pet’s name for each animal adopted within the past month
+   to be displayed as a ‘Happy Tail’ on social media.
+      Answer:
+  c)Create a list of adopters who have not yet chosen a dog to adopt and generate all possible combinations
+  of adopters and available dogs.
+      Answer:
+  d) Display a list of all cats and all dogs who have not been adopted.
+      Answer:
+  e)Create a list of volunteers who are available to foster. If they currently are fostering a dog, include the dog.
+  Also include all dogs who are not currently in foster homes.
+      Answer:
+
+9. Write a query to find the name of the person who adopted Seashell given the tables Cats (depicted below),
+Adoptions (depicted below), and Adopters which has columns for id, address, phone number, and name.
+  a) Dogs table has the columns id, name, gender, age, weight, intake_date, breed, and in_foster.
+      Answer:
+  b) Cats table has the columns id, name, gender, age, intake_date, adoption_date
+      Answer:
+  c) Adoptions table has the columns id, adopter, cat, dog, fee, date
+      Answer:
+
+10. Given the tables Books (isbn, title, author), Transactions(id, checked_out_date, checked_in_date, user_id, isbn),
+Holds(id, isbn, user_id, rank, date),  and Patrons(id, name, fine_amount), write queries to find the following information:
+  a)To discern if the library should buy more copies of a given book, please provide the names and position, in order, of all of the
+  patrons waiting in line for Harry Potter and the Sorcerer’s Stone.
+      Answer:
+  b)Make a list of all book titles and denote whether or not a copy of that book is checked out.
+      Answer:
+  c) In an effort to learn which books take longer to read, the librarians would like you to create a list of
+  total checked out time by book name in the past month.
+      Answer:
+  d) In order to learn which items should be retired, make a list of all books that have not been checked out in the past 5 years.
+      Answer:
+  e) List all of the library patrons. If they have one or more books checked out, correspond the books to the patrons.
+      Answer:
