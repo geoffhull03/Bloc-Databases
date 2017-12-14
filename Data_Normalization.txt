@@ -1,0 +1,43 @@
+1. In your own words, explain the benefits of normalization. Include a real-world scenario where normalization is necessary.
+    Answer: Benefits of normalization include lack of repetition in data, faster updating, faster index creation.
+
+2. List and explain the different normal forms and how they relate to one another, with regard to your real-world scenario
+in the first question.
+    1NF: A column in a table can only contain one value.
+
+    2NF: Must be 1NF and all non-key attributes cannot be dependent on a subset of the primary key
+
+    3NF: Must be 2NF and all transitive functional dependencies of non-prime attributes must not exist.
+
+    BCNF: Must be 3NF and every dependency must be a super key of the table.
+
+3. The student_records table below shows the students and their grades in different subjects.
+The table is already in first normal form (1NF).Convert this table to the third normal form (3NF) using the
+techniques you learned in this checkpoint.
+
+entry_id	| student_id	| professor_id |    subject    | grade | professor_name |       student_email       | student_name
+   1	           1	           2	         Philosophy	     A	      William C	     john.b20@hogwarts.edu	       John B
+   2	           2	           2	         Philosophy	     C	      William C	     sarah.s20@hogwarts.edu	       Sarah S
+   3	           3	           1	         Economics	     A	      Natalie M	     martha.l20@hogwarts.edu	     Martha L
+   4	           4	           3	         Mathematics	   B	      Mark W	       james.g20@hogwarts.edu	       James G
+   5	           5	           1	         Economics	     B	      Natalie M	     stanley.p20@hogwarts.edu	     Stanley P
+
+student_id | student_name | student_email | entry_id
+
+
+entry_id  | student_id | professor_id | grade |
+
+
+professor_id | professor_name | subject
+
+4. In your own words, explain the potential disadvantages of normalizing the data above.
+What are its trade-offs? Discuss this with your mentor.
+    Answer: Disadvantages of normalizing data can include designing the database, the data base queries, and performance. Designing a well-
+    normalized database can be very difficult. Although there are no data redundancies, it requires deep understanding of the
+    normal forms. In addition, database queries can be very complex and convoluted. And last, as the normal forms progress, performance
+    becomes a lot slower in the database.
+
+5. Looking at the tables you have normalized. If you need to denormalize to improve query performance or speed up reporting,
+ how would you carry out denormalization for this database design? Discuss potential strategies with your mentor.
+    Answer: Looking for ways to combine tables together, even though some data might be redundant, would be the best way to
+    denormalize the database. 
