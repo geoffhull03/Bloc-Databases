@@ -40,4 +40,4 @@ What are its trade-offs? Discuss this with your mentor.
 5. Looking at the tables you have normalized. If you need to denormalize to improve query performance or speed up reporting,
  how would you carry out denormalization for this database design? Discuss potential strategies with your mentor.
     Answer: Looking for ways to combine tables together, even though some data might be redundant, would be the best way to
-    denormalize the database. 
+    denormalize the database.
